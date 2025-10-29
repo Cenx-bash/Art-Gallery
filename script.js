@@ -279,14 +279,28 @@ function animateCounters() {
 
 // Start loading animation
 function startLoadingAnimation() {
-    setTimeout(() => {
-        loadingScreen.style.opacity = '0';
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-            // Start counter animations after loading
-            animateCounters();
-        }, 500);
-    }, 2000);
+    const percentageElement = document.querySelector('.loading-percentage');
+    let progress = 0;
+    
+    // Simulate loading progress
+    const interval = setInterval(() => {
+        progress += 1;
+        if (percentageElement) {
+            percentageElement.textContent = `${progress}%`;
+        }
+        
+        if (progress >= 100) {
+            clearInterval(interval);
+            // Hide loading screen
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                    animateCounters();
+                }, 500);
+            }, 500);
+        }
+    }, 25); // Update every 25ms for 2.5s total
 }
 
 // Setup event listeners
