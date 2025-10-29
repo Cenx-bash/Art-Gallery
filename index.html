@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTVERSE | Premium Digital Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="#" class="logo">ART<span>VERSE</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="#artists" class="nav-link">Artists</a></li>
+                <li class="nav-item"><a href="#exhibitions" class="nav-link">Exhibitions</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="nav-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
+                <a href="#" class="nav-icon"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <canvas class="hero-canvas" id="heroCanvas"></canvas>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="display-1">WHERE ART<br>MEETS <span class="accent-text">SOUL</span></h1>
+                <p class="hero-subtitle">Discover extraordinary contemporary artworks from emerging and established artists in our premium digital gallery experience.</p>
+                <div class="cta-group">
+                    <a href="#gallery" class="btn btn-primary">Explore Collection</a>
+                    <a href="#exhibitions" class="btn">View Exhibitions</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="gallery-header">
+                <h2 class="section-title">Featured Artworks</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="painting">Paintings</button>
+                    <button class="filter-btn" data-filter="sculpture">Sculptures</button>
+                    <button class="filter-btn" data-filter="digital">Digital</button>
+                    <button class="filter-btn" data-filter="photography">Photography</button>
+                </div>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Artworks will be dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Artists Section -->
+    <section id="artists" class="artists-section">
+        <div class="container">
+            <h2 class="section-title">Featured Artists</h2>
+            <div class="artists-grid">
+                <div class="artist-card">
+                    <div class="artist-img">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Elena Rodriguez">
+                        <div class="artist-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h3>Elena Rodriguez</h3>
+                        <p class="artist-location">Barcelona, Spain</p>
+                        <p class="artist-bio">Contemporary painter exploring themes of identity through vibrant color palettes and abstract forms.</p>
+                        <a href="#" class="artist-link">View Portfolio <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <div class="artist-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Marcus Chen">
+                        <div class="artist-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h3>Marcus Chen</h3>
+                        <p class="artist-location">Tokyo, Japan</p>
+                        <p class="artist-bio">Mixed media artist combining traditional techniques with digital elements and interactive installations.</p>
+                        <a href="#" class="artist-link">View Portfolio <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <div class="artist-img">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sophie Williams">
+                        <div class="artist-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h3>Sophie Williams</h3>
+                        <p class="artist-location">London, UK</p>
+                        <p class="artist-bio">Sculptor working with reclaimed materials to create environmental statements and public installations.</p>
+                        <a href="#" class="artist-link">View Portfolio <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibitions Section -->
+    <section id="exhibitions" class="exhibitions-section">
+        <div class="container">
+            <h2 class="section-title">Current Exhibitions</h2>
+            <div class="exhibitions-grid">
+                <div class="exhibition-card">
+                    <div class="exhibition-img">
+                        <img src="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Beyond Boundaries">
+                        <div class="exhibition-date">
+                            <span class="date">15 MAR - 30 MAY</span>
+                            <span class="year">2024</span>
+                        </div>
+                    </div>
+                    <div class="exhibition-info">
+                        <h3>Beyond Boundaries</h3>
+                        <p>An exploration of art that transcends traditional mediums and cultural divides, featuring 30 international artists.</p>
+                        <div class="exhibition-stats">
+                            <div class="stat">
+                                <span class="stat-number">30+</span>
+                                <span class="stat-label">Artists</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">120</span>
+                                <span class="stat-label">Artworks</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Floors</span>
+                            </div>
+                        </div>
+                        <a href="#" class="exhibition-link">Book Tickets <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="exhibition-card">
+                    <div class="exhibition-img">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Digital Realms">
+                        <div class="exhibition-date">
+                            <span class="date">10 SEP - 15 DEC</span>
+                            <span class="year">2024</span>
+                        </div>
+                    </div>
+                    <div class="exhibition-info">
+                        <h3>Digital Realms</h3>
+                        <p>Exploring the intersection of technology and artistic expression through immersive digital installations and VR experiences.</p>
+                        <div class="exhibition-stats">
+                            <div class="stat">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">Artists</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">45</span>
+                                <span class="stat-label">Artworks</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">2</span>
+                                <span class="stat-label">Floors</span>
+                            </div>
+                        </div>
+                        <a href="#" class="exhibition-link">Book Tickets <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Our Story</h2>
+                    <p class="about-description">ARTVERSE is a premium digital gallery dedicated to showcasing exceptional contemporary art from around the world. Founded in 2015, we bridge the gap between traditional art spaces and digital innovation.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="250">0</span>
+                            <span class="stat-label">Featured Artists</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="1200">0</span>
+                            <span class="stat-label">Artworks</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="45">0</span>
+                            <span class="stat-label">Exhibitions</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">0</span>
+                            <span class="stat-label">Countries</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1567595754668-9b8bce153a1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Gallery Space">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Visit Our Gallery</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>123 Gallery Street<br>Art District, City 10001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Hours</h3>
+                            <p>Tuesday - Sunday: 10am - 6pm<br>Monday: Closed</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Contact</h3>
+                            <p>info@artverse.com<br>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ARTVERSE</h3>
+                    <p>Premium contemporary art gallery showcasing exceptional works from international artists.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#artists">Artists</a></li>
+                        <li><a href="#exhibitions">Exhibitions</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Art Consultation</a></li>
+                        <li><a href="#">Private Viewings</a></li>
+                        <li><a href="#">Art Rental</a></li>
+                        <li><a href="#">Commission Works</a></li>
+                        <li><a href="#">Shipping</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive updates on new collections and exhibitions.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ARTVERSE Gallery. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox">&times;</span>
+            <div class="lightbox-body">
+                <div class="lightbox-image">
+                    <img src="" alt="" id="lightbox-img">
+                </div>
+                <div class="lightbox-info">
+                    <h3 id="lightbox-title"></h3>
+                    <p id="lightbox-artist"></p>
+                    <p id="lightbox-description"></p>
+                    <div class="lightbox-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Medium</span>
+                            <span id="lightbox-medium"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Dimensions</span>
+                            <span id="lightbox-dimensions"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Year</span>
+                            <span id="lightbox-year"></span>
+                        </div>
+                    </div>
+                    <div class="lightbox-actions">
+                        <button class="btn btn-primary">Inquire</button>
+                        <button class="btn">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">ARTVERSE</div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
