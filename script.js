@@ -110,6 +110,7 @@ const loadingScreen = document.getElementById('loading');
 const heroCanvas = document.getElementById('heroCanvas');
 const statNumbers = document.querySelectorAll('.stat-number[data-count]');
 
+
 // Initialize the application
 function initApp() {
     displayArtworks(artworks);
