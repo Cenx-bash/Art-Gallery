@@ -110,13 +110,26 @@ const loadingScreen = document.getElementById('loading');
 const heroCanvas = document.getElementById('heroCanvas');
 const statNumbers = document.querySelectorAll('.stat-number[data-count]');
 
-
 // Initialize the application
 function initApp() {
-    displayArtworks(artworks);
-    setupEventListeners();
-    initCanvasAnimation();
-    startLoadingAnimation();
+    try {
+        // Check if gallery grid exists
+        if (!galleryGrid) {
+            console.error('Gallery grid element not found');
+            return;
+        }
+        
+        displayArtworks(artworks);
+        setupEventListeners();
+        initCanvasAnimation();
+        startLoadingAnimation();
+    } catch (error) {
+        console.error('Error initializing app:', error);
+        // Ensure loading screen hides even if there's an error
+        if (loadingScreen) {
+            loadingScreen.style.display = 'none';
+        }
+    }
 }
 
 // Display artworks in the gallery
@@ -175,7 +188,18 @@ function closeLightboxFunc() {
 // Initialize canvas animation for hero section
 function initCanvasAnimation() {
     const canvas = heroCanvas;
+    
+    // Check if canvas exists
+    if (!canvas) {
+        console.warn('Hero canvas element not found');
+        return;
+    }
+    
     const ctx = canvas.getContext('2d');
+    if (!ctx) {
+        console.warn('Canvas context not supported');
+        return;
+    }
     
     // Set canvas size
     function setCanvasSize() {
@@ -261,10 +285,22 @@ function initCanvasAnimation() {
 
 // Animate statistics counters
 function animateCounters() {
+    // Check if we have stat elements
+    if (statNumbers.length === 0) {
+        console.warn('No statistic counter elements found');
+        return;
+    }
+    
     statNumbers.forEach(stat => {
         const target = parseInt(stat.getAttribute('data-count'));
-        const duration = 2000; // 2 seconds
-        const step = target / (duration / 16); // 60fps
+        // Add validation for target
+        if (isNaN(target)) {
+            console.warn('Invalid data-count value:', stat.getAttribute('data-count'));
+            return;
+        }
+        
+        const duration = 2000;
+        const step = target / (duration / 16);
         
         let current = 0;
         const timer = setInterval(() => {
@@ -281,27 +317,34 @@ function animateCounters() {
 // Start loading animation
 function startLoadingAnimation() {
     const percentageElement = document.querySelector('.loading-percentage');
-    let progress = 0;
     
-    // Simulate loading progress
-    const interval = setInterval(() => {
-        progress += 1;
-        if (percentageElement) {
+    // If percentage element exists, show progress numbers
+    if (percentageElement) {
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 1;
             percentageElement.textContent = `${progress}%`;
+            
+            if (progress >= 100) {
+                clearInterval(interval);
+                hideLoadingScreen();
+            }
+        }, 25);
+    } else {
+        // Fallback: simple timeout without percentage
+        setTimeout(hideLoadingScreen, 2500);
+    }
+}
+
+function hideLoadingScreen() {
+    loadingScreen.style.opacity = '0';
+    setTimeout(() => {
+        loadingScreen.style.display = 'none';
+        // Only animate counters if they exist
+        if (statNumbers.length > 0) {
+            animateCounters();
         }
-        
-        if (progress >= 100) {
-            clearInterval(interval);
-            // Hide loading screen
-            setTimeout(() => {
-                loadingScreen.style.opacity = '0';
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                    animateCounters();
-                }, 500);
-            }, 500);
-        }
-    }, 25); // Update every 25ms for 2.5s total
+    }, 500);
 }
 
 // Setup event listeners
