@@ -5,7 +5,7 @@ const artworks = [
         title: "Abstract Harmony",
         artist: "Elena Rodriguez",
         category: "painting",
-        image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1458&q=80",
+        image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=1458&q=80",
         description: "A vibrant exploration of color and form that challenges traditional perspectives on abstract expressionism.",
         medium: "Oil on canvas",
         dimensions: "120 × 90 cm",
@@ -16,7 +16,7 @@ const artworks = [
         title: "Urban Echoes",
         artist: "Marcus Chen",
         category: "digital",
-        image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
         description: "Digital collage merging urban photography with algorithmic patterns and generative art techniques.",
         medium: "Digital print on archival paper",
         dimensions: "80 × 60 cm",
@@ -27,7 +27,7 @@ const artworks = [
         title: "Silent Dialogue",
         artist: "Sophie Williams",
         category: "sculpture",
-        image: "https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        image: "https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
         description: "Reclaimed wood and metal sculpture exploring the relationship between nature and industry.",
         medium: "Mixed media (wood, metal)",
         dimensions: "45 × 30 × 25 cm",
@@ -38,7 +38,7 @@ const artworks = [
         title: "Fleeting Moments",
         artist: "Alex Johnson",
         category: "photography",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
         description: "Street photography capturing ephemeral human interactions in urban environments.",
         medium: "Archival pigment print",
         dimensions: "60 × 40 cm",
@@ -49,7 +49,7 @@ const artworks = [
         title: "Chromatic Dreams",
         artist: "Elena Rodriguez",
         category: "painting",
-        image: "https://images.unsplash.com/photo-1549289524-06cf8837ace5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        image: "https://images.unsplash.com/photo-1549289524-06cf8837ace5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
         description: "Oil on canvas exploring the subconscious through a vibrant color palette and fluid forms.",
         medium: "Oil on canvas",
         dimensions: "100 × 80 cm",
@@ -60,7 +60,7 @@ const artworks = [
         title: "Data Flow",
         artist: "Marcus Chen",
         category: "digital",
-        image: "https://images.unsplash.com/photo-1550684376-efcbd6e3f031?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        image: "https://images.unsplash.com/photo-1550684376-efcbd6e3f031?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
         description: "Generative art visualizing the invisible networks that connect our digital world.",
         medium: "Digital animation, limited edition print",
         dimensions: "90 × 60 cm",
@@ -71,7 +71,7 @@ const artworks = [
         title: "Earthen Vessels",
         artist: "Sophie Williams",
         category: "sculpture",
-        image: "https://images.unsplash.com/photo-1565896314091-2be0b49b7f1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80",
+        image: "https://images.unsplash.com/photo-1565896314091-2be0b49b7f1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1476&q=80",
         description: "Ceramic forms inspired by ancient pottery techniques with contemporary aesthetics.",
         medium: "Stoneware clay",
         dimensions: "Various dimensions",
@@ -82,13 +82,68 @@ const artworks = [
         title: "Horizon Lines",
         artist: "Alex Johnson",
         category: "photography",
-        image: "https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80",
+        image: "https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1528&q=80",
         description: "Minimalist landscape photography exploring the boundary between earth and sky.",
         medium: "Archival pigment print",
         dimensions: "80 × 50 cm",
         year: "2023"
     }
 ];
+
+// Artists data
+const artists = {
+    elena: {
+        name: "Elena Rodriguez",
+        location: "Barcelona, Spain",
+        bio: "Elena Rodriguez is a contemporary painter known for her vibrant exploration of identity through abstract forms and bold color palettes. With over 15 years of experience, her work has been exhibited in galleries across Europe and North America. Elena's unique approach combines traditional painting techniques with modern emotional expression, creating pieces that resonate deeply with viewers.",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        stats: {
+            exhibitions: 15,
+            awards: 3,
+            artworks: 50,
+            collections: 25
+        },
+        social: {
+            instagram: "@elenarodriguezart",
+            twitter: "@elena_art",
+            behance: "elenarodriguez"
+        }
+    },
+    marcus: {
+        name: "Marcus Chen",
+        location: "Tokyo, Japan",
+        bio: "Marcus Chen is a pioneering mixed media artist who seamlessly blends traditional techniques with cutting-edge digital elements. His interactive installations have captivated audiences worldwide, pushing the boundaries of what constitutes contemporary art. Marcus's work often explores the intersection of technology, nature, and human consciousness.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        stats: {
+            exhibitions: 12,
+            awards: 5,
+            artworks: 35,
+            collections: 18
+        },
+        social: {
+            instagram: "@marcuschen.digital",
+            twitter: "@marcuschen",
+            behance: "marcuschen"
+        }
+    },
+    sophie: {
+        name: "Sophie Williams",
+        location: "London, UK",
+        bio: "Sophie Williams is an environmental sculptor renowned for her work with reclaimed materials. Her large-scale installations address pressing ecological issues while maintaining aesthetic beauty. Sophie's commitment to sustainability extends beyond her art, as she actively participates in environmental conservation projects and educates communities about sustainable art practices.",
+        image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        stats: {
+            exhibitions: 18,
+            awards: 4,
+            artworks: 40,
+            collections: 22
+        },
+        social: {
+            instagram: "@sophiewilliams.sculpture",
+            twitter: "@sophie_sculpts",
+            behance: "sophiewilliams"
+        }
+    }
+};
 
 // DOM Elements
 const galleryGrid = document.getElementById('galleryGrid');
@@ -106,9 +161,18 @@ const lightboxMedium = document.getElementById('lightbox-medium');
 const lightboxDimensions = document.getElementById('lightbox-dimensions');
 const lightboxYear = document.getElementById('lightbox-year');
 const contactForm = document.getElementById('contactForm');
+const commentForm = document.getElementById('commentForm');
 const loadingScreen = document.getElementById('loading');
 const heroCanvas = document.getElementById('heroCanvas');
 const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+const artistModal = document.getElementById('artistModal');
+const closeArtistModal = document.querySelector('.close-artist-modal');
+const artistModalBody = document.getElementById('artistModalBody');
+const takePhotoBtn = document.getElementById('takePhotoBtn');
+const uploadPhotoBtn = document.getElementById('uploadPhotoBtn');
+const cameraView = document.getElementById('cameraView');
+const photosGrid = document.getElementById('photosGrid');
+const commentsGrid = document.getElementById('commentsGrid');
 
 // Initialize the application
 function initApp() {
@@ -123,6 +187,8 @@ function initApp() {
         setupEventListeners();
         initCanvasAnimation();
         startLoadingAnimation();
+        loadSampleComments();
+        loadSamplePhotos();
     } catch (error) {
         console.error('Error initializing app:', error);
         // Ensure loading screen hides even if there's an error
@@ -182,6 +248,57 @@ function openLightbox(artwork) {
 // Close lightbox
 function closeLightboxFunc() {
     lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Open artist profile modal
+function openArtistModal(artistId) {
+    const artist = artists[artistId];
+    if (!artist) return;
+    
+    artistModalBody.innerHTML = `
+        <div class="artist-profile">
+            <div class="artist-profile-image">
+                <img src="${artist.image}" alt="${artist.name}">
+            </div>
+            <div class="artist-profile-info">
+                <h2>${artist.name}</h2>
+                <p class="artist-profile-location">
+                    <i class="fas fa-map-marker-alt"></i> ${artist.location}
+                </p>
+                <p class="artist-profile-bio">${artist.bio}</p>
+                
+                <div class="artist-profile-stats">
+                    <div class="artist-profile-stat">
+                        <span class="number">${artist.stats.exhibitions}</span>
+                        <span class="label">Exhibitions</span>
+                    </div>
+                    <div class="artist-profile-stat">
+                        <span class="number">${artist.stats.awards}</span>
+                        <span class="label">Awards</span>
+                    </div>
+                    <div class="artist-profile-stat">
+                        <span class="number">${artist.stats.artworks}</span>
+                        <span class="label">Artworks</span>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i> ${artist.social.instagram}</a>
+                    <a href="#"><i class="fab fa-twitter"></i> ${artist.social.twitter}</a>
+                    <a href="#"><i class="fab fa-behance"></i> ${artist.social.behance}</a>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    artistModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Close artist modal
+function closeArtistModalFunc() {
+    artistModal.classList.remove('active');
     document.body.style.overflow = 'auto';
 }
 
@@ -347,6 +464,116 @@ function hideLoadingScreen() {
     }, 500);
 }
 
+// Load sample comments
+function loadSampleComments() {
+    const sampleComments = [
+        {
+            name: "Art Enthusiast",
+            date: "3 hours ago",
+            text: "The Digital Realms exhibition is mind-blowing! The VR experiences transported me to another dimension."
+        },
+        {
+            name: "Creative Mind",
+            date: "1 day ago",
+            text: "Sophie Williams' sculptures made me see recycled materials in a completely new light. Truly inspiring work!"
+        },
+        {
+            name: "Gallery Visitor",
+            date: "2 days ago",
+            text: "The attention to detail in every artwork is incredible. This gallery sets the standard for contemporary art spaces."
+        }
+    ];
+    
+    sampleComments.forEach(comment => {
+        addCommentToGrid(comment);
+    });
+}
+
+// Add comment to grid
+function addCommentToGrid(comment) {
+    const commentElement = document.createElement('div');
+    commentElement.classList.add('comment-card');
+    
+    commentElement.innerHTML = `
+        <div class="comment-header">
+            <div class="comment-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="comment-info">
+                <h4>${comment.name}</h4>
+                <span class="comment-date">${comment.date}</span>
+            </div>
+        </div>
+        <p class="comment-text">${comment.text}</p>
+    `;
+    
+    commentsGrid.appendChild(commentElement);
+}
+
+// Load sample photos
+function loadSamplePhotos() {
+    const samplePhotos = [
+        {
+            image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            author: "Gallery Visitor",
+            time: "Today"
+        },
+        {
+            image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            author: "Art Lover",
+            time: "Today"
+        },
+        {
+            image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            author: "Creative Soul",
+            time: "Yesterday"
+        }
+    ];
+    
+    samplePhotos.forEach(photo => {
+        addPhotoToGrid(photo);
+    });
+}
+
+// Add photo to grid
+function addPhotoToGrid(photo) {
+    const photoElement = document.createElement('div');
+    photoElement.classList.add('photo-item');
+    
+    photoElement.innerHTML = `
+        <img src="${photo.image}" alt="Gallery Photo">
+        <div class="photo-info">
+            <span class="photo-author">${photo.author}</span>
+            <span class="photo-time">${photo.time}</span>
+        </div>
+    `;
+    
+    photosGrid.appendChild(photoElement);
+}
+
+// Simulate taking a photo
+function takePhoto() {
+    // In a real implementation, this would use the device camera
+    // For demo purposes, we'll use a placeholder
+    cameraView.innerHTML = `
+        <div class="camera-placeholder">
+            <i class="fas fa-check-circle" style="color: #4CAF50;"></i>
+            <p>Photo captured! Ready to share.</p>
+        </div>
+    `;
+    
+    // Add the new photo to the grid
+    const newPhoto = {
+        image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        author: "You",
+        time: "Just now"
+    };
+    
+    addPhotoToGrid(newPhoto);
+    
+    showNotification('Photo captured and added to the gallery!');
+}
+
 // Setup event listeners
 function setupEventListeners() {
     // Filter buttons
@@ -395,6 +622,25 @@ function setupEventListeners() {
         }
     });
     
+    // Artist modal close
+    closeArtistModal.addEventListener('click', closeArtistModalFunc);
+    
+    // Close artist modal when clicking outside
+    artistModal.addEventListener('click', (e) => {
+        if (e.target === artistModal) {
+            closeArtistModalFunc();
+        }
+    });
+    
+    // Artist profile links
+    document.querySelectorAll('.view-profile').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const artistId = link.getAttribute('data-artist');
+            openArtistModal(artistId);
+        });
+    });
+    
     // Contact form submission
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -405,13 +651,41 @@ function setupEventListeners() {
         const message = document.getElementById('message').value;
         
         // In a real application, you would send this data to a server
-        console.log('Form submitted:', { name, email, message });
+        console.log('Contact form submitted:', { name, email, message });
         
         // Show success message
         showNotification('Thank you for your message! We will get back to you soon.');
         
         // Reset form
         contactForm.reset();
+    });
+    
+    // Comment form submission
+    commentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('commentName').value;
+        const message = document.getElementById('commentMessage').value;
+        
+        if (name && message) {
+            const newComment = {
+                name: name,
+                date: 'Just now',
+                text: message
+            };
+            
+            addCommentToGrid(newComment);
+            showNotification('Thank you for your comment!');
+            commentForm.reset();
+        }
+    });
+    
+    // Photobooth functionality
+    takePhotoBtn.addEventListener('click', takePhoto);
+    
+    uploadPhotoBtn.addEventListener('click', () => {
+        // In a real implementation, this would open a file picker
+        showNotification('Photo upload feature would open file browser in real implementation');
     });
     
     // Newsletter form submission
