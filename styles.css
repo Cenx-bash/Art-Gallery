@@ -1,3 +1,19 @@
+    @font-face {
+        font-family: "Barbra"; /* You can choose any name for your font-family */
+        src: url("Resources/Font/Barbra-Regular.otf") format("woff2"),
+             url("Resources/Font/Barbra-Regular.otf") format("woff");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Barbra Bold";
+        src: url("Resources/Font/Barbra-High.otf") format("woff2"),
+             url("Resources/Font/Barbra-Regular.otf") format("woff");
+        font-weight: bold;
+        font-style: normal;
+    }
+
 :root {
     --primary: #0a0a0a;
     --secondary: #1a1a1a;
@@ -131,7 +147,7 @@ section {
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Barbra Bold';
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--text);
@@ -218,6 +234,9 @@ section {
     align-items: center;
     position: relative;
     overflow: hidden;
+}
+.display-1{
+    font-family: 'Barbra Custom', serif;
 }
 
 .hero-bg {
@@ -1420,7 +1439,7 @@ section {
 }
 
 .loading-logo {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Barbra Bold', serif;
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;

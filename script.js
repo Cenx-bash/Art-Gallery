@@ -87,7 +87,20 @@ const artworks = [
         medium: "Archival pigment print",
         dimensions: "80 × 50 cm",
         year: "2023"
-    }
+    },
+    //modularized version
+    {
+        id: 9,
+        title: "Sol at Luna: Liberasyon",
+        artist: "Sofia Louise C. Zaballa",
+        category: "painting",
+        image: "resources/images/SolAtLuna.jpg",
+        description: "Minimalist landscape photography exploring the boundary between earth and sky.",
+        medium: "Oil on canvas",
+        dimensions: "80 × 50 cm",
+        year: "October 2021"
+    } 
+    
 ];
 
 // Artists data
