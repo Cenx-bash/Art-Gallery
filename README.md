@@ -1,4 +1,4 @@
-# Art Fest - Premium Digital Gallery
+# BALIKTANAW
 
 A sophisticated, responsive art gallery website showcasing contemporary artworks from emerging and established artists.
 
