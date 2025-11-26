@@ -99,6 +99,18 @@ const artworks = [
         medium: "Oil on canvas",
         dimensions: "80 × 50 cm",
         year: "October 2021"
+    },
+    //modularized version
+    {
+        id: 10,
+        title: "Tahimik na Gabi sa Bitak na Bato",
+        artist: "Vincent lleva",
+        category: "painting",
+        image: "resources/images/TahimikNaGabi.webp",
+        description: "Minimalist landscape photography exploring the boundary between earth and sky.",
+        medium: "Oil on canvas",
+        dimensions: "80 × 50 cm",
+        year: "2024"
     } 
     
 ];
