@@ -1,105 +1,108 @@
 // Artworks data
 const artworks = [
-    {
+    {   //visual arts = painting
+        //applied arts = sculpture
+        //literary arts = digital
+        //performance arts = photography
         id: 1,
-        title: "Abstract Harmony",
-        artist: "Elena Rodriguez",
+         title: "Tahimik na Gabi sa bitak Na Bato",
+        artist: "VCENZO",
         category: "painting",
-        image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=1458&q=80",
-        description: "A vibrant exploration of color and form that challenges traditional perspectives on abstract expressionism.",
+        image: "resources/images/visual_arts/Tahimikvcenzo.jpg",
+        description: "depicts a tranquil night scene in a revolutionary encampment inspired by the Katipunan and the Biak-na-Bato Republic.",
         medium: "Oil on canvas",
-        dimensions: "120 × 90 cm",
-        year: "2023"
+        dimensions: "100 × 80 cm",
+        year: "2024"
     },
     {
         id: 2,
-        title: "Urban Echoes",
-        artist: "Marcus Chen",
-        category: "digital",
-        image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-        description: "Digital collage merging urban photography with algorithmic patterns and generative art techniques.",
-        medium: "Digital print on archival paper",
-        dimensions: "80 × 60 cm",
-        year: "2023"
-    },
-    {
-        id: 3,
-        title: "Silent Dialogue",
-        artist: "Sophie Williams",
-        category: "sculpture",
-        image: "https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-        description: "Reclaimed wood and metal sculpture exploring the relationship between nature and industry.",
-        medium: "Mixed media (wood, metal)",
-        dimensions: "45 × 30 × 25 cm",
-        year: "2023"
-    },
-    {
-        id: 4,
-        title: "Fleeting Moments",
-        artist: "Alex Johnson",
-        category: "photography",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-        description: "Street photography capturing ephemeral human interactions in urban environments.",
-        medium: "Archival pigment print",
-        dimensions: "60 × 40 cm",
-        year: "2023"
-    },
-    {
-        id: 5,
-        title: "Chromatic Dreams",
-        artist: "Elena Rodriguez",
-        category: "painting",
-        image: "https://images.unsplash.com/photo-1549289524-06cf8837ace5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-        description: "Oil on canvas exploring the subconscious through a vibrant color palette and fluid forms.",
-        medium: "Oil on canvas",
-        dimensions: "100 × 80 cm",
-        year: "2023"
-    },
-    {
-        id: 6,
-        title: "Data Flow",
-        artist: "Marcus Chen",
-        category: "digital",
-        image: "https://images.unsplash.com/photo-1550684376-efcbd6e3f031?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-        description: "Generative art visualizing the invisible networks that connect our digital world.",
-        medium: "Digital animation, limited edition print",
-        dimensions: "90 × 60 cm",
-        year: "2023"
-    },
-    {
-        id: 7,
-        title: "Earthen Vessels",
-        artist: "Sophie Williams",
-        category: "sculpture",
-        image: "https://images.unsplash.com/photo-1565896314091-2be0b49b7f1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1476&q=80",
-        description: "Ceramic forms inspired by ancient pottery techniques with contemporary aesthetics.",
-        medium: "Stoneware clay",
-        dimensions: "Various dimensions",
-        year: "2023"
-    },
-    {
-        id: 8,
-        title: "Horizon Lines",
-        artist: "Alex Johnson",
-        category: "photography",
-        image: "https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1528&q=80",
-        description: "Minimalist landscape photography exploring the boundary between earth and sky.",
-        medium: "Archival pigment print",
-        dimensions: "80 × 50 cm",
-        year: "2023"
-    },
-    //modularized version
-    {
-        id: 9,
         title: "Sol at Luna: Liberasyon",
         artist: "Sofia Louise C. Zaballa",
         category: "painting",
-        image: "resources/images/SolAtLuna.jpg",
-        description: "Minimalist landscape photography exploring the boundary between earth and sky.",
+        image: "resources/images/visual_arts/SolAtLuna.jpg",
+        description: "inspired by Filipino ethnic tribes that wore “batuk/batok” a tattooing tradition prevalent mostly in the Kalinga tribe.",
         medium: "Oil on canvas",
-        dimensions: "80 × 50 cm",
+        dimensions: "1080 x 1920",
         year: "October 2021"
-    } 
+    },
+    {
+        id: 3,
+        title: "Threads of Ancestry",
+        artist: "Ashley Marie Casili",
+        category: "painting",
+        image: "resources/images/visual_arts/Threads_Casili.png",
+        description: "The artwork evokes strong presentation about the T’boli tribe of the Philippines, which are mostly known for their rich weaving traditions and distinctive clothing.",
+        medium: "Digital Art/Application, IbispaintX",
+        dimensions: "3000 x 3000 px",
+        year: "2025"
+    },
+    {
+        id: 4,
+        title: "Batok, Stories, Identity",
+        artist: "Mariella Angela M. Baleciado",
+        category: "painting",
+        image: "resources/images/visual_arts/Batok_Baleciado.jpg",
+        description: "The piece honors the heritage of tattooing as a cultural language, where every mark carries a story of one’s community, achievements, beliefs, and connection to the natural world.",
+        medium: "Coffee, Paper, Ink",
+        dimensions: "",
+        year: "November 10 2025"
+    },
+    {
+        id: 5,
+        title: "Ina",
+        artist: "Kent Steven Abillon",
+        category: "painting",
+        image: "resources/images/visual_arts/Ina_Abillon.png",
+        description: "the devotion of the pilgrim to Ina. It represent the dedication and celebration of event where they experience a little or mini fluvial where bicolanos gather for the Sakay of Ina",
+        medium: "Sony A711, Edited in Lightroom",
+        dimensions: "1080 × 1350 pixels",
+        year: "July 11 2025"
+    },
+    {
+        id: 6,
+        title: "Tribal Rhythm",
+        artist: "Angeline Dela Cruz Marcaida",
+        category: "sculpture",
+        image: "resources/images/applied_arts/Tribal_Cons.jpg",
+        description: "formations. Its bold structure highlights traditional ornamentation often found in indigenous cultures. The piece visually strikes a sense of strength and rooted identity.",
+        medium: "metal beads, iron coiled wire strands.",
+        dimensions: "20' length",
+        year: "2022"
+    },
+    {
+        id: 7,
+        title: "The Blood of Our Kin",
+        artist: "Karl Christian M. Garcia",
+        category: "digital",
+        image: "resources/images/literary_arts/bloodKin.jpg",
+        description: "a contemporary poem that explores themes of decolonization and the reclamation of Filipino Identity. It reflects on the enduring effects of colonialism, the rich heritage of Filipino ancestors, and the importance of remembering and embracing one’s roots.",
+        medium: "Poem",
+        dimensions: "Various dimensions",
+        year: "November 24 2025"
+    },
+    ,
+    {
+        id: 8,
+        title: "Lupang Sinilangan",
+        artist: "Eman Rey Gases",
+        category: "digital",
+        image: "resources/images/literary_arts/Gases.jpg",
+        description: "Ang tulang ito ay tungkol sa pagkakakilanlan at kasaysayan ng pilipino.",
+        medium: "Poem",
+        dimensions: "Various dimensions",
+        year: "October 28 2025"
+    },
+    /*{
+        id: 9,
+        title: "Singkil",
+        artist: "Kristine Camille B. Bernales",
+        category: "photography",
+        video: "",
+        description: "Minimalist landscape photography exploring the boundary between earth and sky.",
+        medium: "Archival pigment print",
+        dimensions: "80 × 50 cm",
+        year: "2023"
+    },*/
     
 ];
 
