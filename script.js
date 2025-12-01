@@ -235,56 +235,25 @@ function filterArtworks(category) {
     }
 }
 
+// Open lightbox with artwork details
 function openLightbox(artwork) {
-    const mediaContainer = document.getElementById("lightboxMedia"); 
-    mediaContainer.innerHTML = ""; // Clear previous content
-
-    let mediaElement;
-
-    // Determine media type
-    if (artwork.type === "youtube") {
-        mediaElement = document.createElement("iframe");
-        mediaElement.src = artwork.iframe;  
-        mediaElement.width = "100%";
-        mediaElement.height = "450";
-        mediaElement.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-        mediaElement.allowFullscreen = true;
-
-    } else if (artwork.type === "pdf") {
-        mediaElement = document.createElement("iframe");
-        mediaElement.src = artwork.iframe; 
-        mediaElement.width = "100%";
-        mediaElement.height = "600";
-
-    } else {
-        // Default: image
-        mediaElement = document.createElement("img");
-        mediaElement.src = artwork.image;
-        mediaElement.alt = artwork.title;
-        mediaElement.classList.add("lightbox-img");
-    }
-
-    mediaContainer.appendChild(mediaElement);
-
-    // Text content
+    lightboxImg.src = artwork.image;
+    lightboxImg.alt = artwork.title;
     lightboxTitle.textContent = artwork.title;
     lightboxArtist.textContent = `By ${artwork.artist}`;
     lightboxDescription.textContent = artwork.description;
     lightboxMedium.textContent = artwork.medium;
     lightboxDimensions.textContent = artwork.dimensions;
     lightboxYear.textContent = artwork.year;
-
-    lightbox.classList.add("active");
-    document.body.style.overflow = "hidden";
+    
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
+// Close lightbox
 function closeLightboxFunc() {
-    lightbox.classList.remove("active");
-    document.body.style.overflow = "auto";
-
-    // Stop videos when closing
-    const mediaContainer = document.getElementById("lightboxMedia");
-    mediaContainer.innerHTML = "";
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto';
 }
 
 // Open artist profile modal
@@ -687,172 +656,215 @@ function setupEventListeners() {
     });
     
     // Photobooth functionality
-// Element references
-const takePhotoBtn = document.getElementById('takePhotoBtn');
-const uploadPhotoBtn = document.getElementById('uploadPhotoBtn');
-const submitPhotoBtn = document.getElementById('submitPhotoBtn');
-const photoFileInput = document.getElementById('photoFileInput');
-const cameraView = document.getElementById('cameraView');
-const photosGrid = document.getElementById('photosGrid');
-const videoFeed = document.getElementById('videoFeed');
-const canvasSnapshot = document.getElementById('canvasSnapshot');
-const cameraPlaceholder = document.getElementById('cameraPlaceholder');
+    const takePhotoBtn = document.getElementById('takePhotoBtn');
+    const uploadPhotoBtn = document.getElementById('uploadPhotoBtn');
+    const submitPhotoBtn = document.getElementById('submitPhotoBtn');
+    const photoFileInput = document.getElementById('photoFileInput');
+    const cameraView = document.getElementById('cameraView'); 
+    const photosGrid = document.getElementById('photosGrid');
+    const videoFeed = document.getElementById('videoFeed');
+    const canvasSnapshot = document.getElementById('canvasSnapshot');
+    const cameraPlaceholder = document.getElementById('cameraPlaceholder');
 
-// Global state variables
-let currentPhotoDataURL = null;
-let stream = null;
-
-// Notification placeholder
-function showNotification(message) {
-    console.log(`[Notification] ${message}`);
-}
-
-// Enable/disable submit button
-function enableSubmitButton(isEnabled) {
-    submitPhotoBtn.disabled = !isEnabled;
-    if (isEnabled) submitPhotoBtn.classList.add('btn-primary');
-    else submitPhotoBtn.classList.remove('btn-primary');
-}
-
-// Stop camera stream
-function stopCamera() {
-    if (stream) {
-        stream.getTracks().forEach(track => track.stop());
-        stream = null;
+    // Global state variables
+    let currentPhotoDataURL = null; // Stores the image data for submission (Data URL format)
+    let stream = null; // Stores the active camera stream for stopping later
+    
+    // Placeholder function
+    function showNotification(message) {
+        console.log(`[Notification] ${message}`);
+        // In a real app, update a notification element on the screen
     }
-}
 
-// Take snapshot from camera
-function takeSnapshot() {
-    const context = canvasSnapshot.getContext('2d');
-
-    canvasSnapshot.width = videoFeed.videoWidth;
-    canvasSnapshot.height = videoFeed.videoHeight;
-
-    context.drawImage(videoFeed, 0, 0, canvasSnapshot.width, canvasSnapshot.height);
-
-    currentPhotoDataURL = canvasSnapshot.toDataURL('image/png');
-    enableSubmitButton(true);
-
-    videoFeed.style.display = 'none';
-    canvasSnapshot.style.display = 'block';
-
-    stopCamera();
-    showNotification('Photo captured! Click "Submit Photo" to save.');
-}
-
-// Start camera feed
-async function startCamera() {
-    try {
-        stream = await navigator.mediaDevices.getUserMedia({
-            video: { facingMode: "environment" },
-            audio: false
-        });
-
-        videoFeed.srcObject = stream;
-
-        videoFeed.onloadedmetadata = () => {
-            videoFeed.play();
-
-            cameraPlaceholder.style.display = 'none';
-            canvasSnapshot.style.display = 'none';
-            videoFeed.style.display = 'block';
-
-            showNotification('Camera active. Click again to capture.');
-        };
-
-    } catch (err) {
-        console.error("Camera error:", err);
-        showNotification('Camera access denied. Please allow camera permission.');
-        cameraPlaceholder.style.display = 'flex';
+    // --- Helper to enable/disable the submit button ---
+    function enableSubmitButton(isEnabled) {
+        submitPhotoBtn.disabled = !isEnabled;
+        if (isEnabled) {
+            // Assuming you have a CSS class for primary buttons
+            submitPhotoBtn.classList.add('btn-primary');
+        } else {
+            submitPhotoBtn.classList.remove('btn-primary');
+        }
     }
-}
-
-// Handle Take Photo button logic
-takePhotoBtn.addEventListener('click', () => {
-    if (!stream) {
-        startCamera();
-    } else {
-        takeSnapshot();
+    
+    // ----------------------------------------------------
+    // CAMERA SHUTDOWN LOGIC
+    // ----------------------------------------------------
+    function stopCamera() {
+        if (stream) {
+            stream.getTracks().forEach(track => track.stop());
+            stream = null;
+            // Restore visual state if needed, though usually handle in submit/upload
+        }
     }
-});
+    
+    // ----------------------------------------------------
+    // SNAPSHOT CAPTURE LOGIC
+    // ----------------------------------------------------
+    function takePhoto() {
+        if (!stream) {
+            // If camera hasn't been started, clicking button should start it.
+            startCamera();
+            return;
+        }
 
-// Handle Upload Photo
-uploadPhotoBtn.addEventListener('click', () => {
-    stopCamera();
-    photoFileInput.click();
-});
+        // 1. Draw the current video frame onto the canvas
+        const context = canvasSnapshot.getContext('2d');
+        // Ensure canvas dimensions match video stream for capture quality
+        canvasSnapshot.width = videoFeed.videoWidth;
+        canvasSnapshot.height = videoFeed.videoHeight;
+        context.drawImage(videoFeed, 0, 0, canvasSnapshot.width, canvasSnapshot.height);
 
-photoFileInput.addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    stopCamera();
+        // 2. Convert the canvas content into a Data URL
+        currentPhotoDataURL = canvasSnapshot.toDataURL('image/png');
+        enableSubmitButton(true);
 
-    if (file) {
-        const reader = new FileReader();
+        // 3. Display the snapshot (hide video, show canvas)
+        videoFeed.style.display = 'none';
+        canvasSnapshot.style.display = 'block';
+        showNotification('Photo captured! Click "Submit Photo" to save it.');
+        
+        // 4. Stop the camera stream after capture
+        stopCamera();
+    }
 
-        reader.onloadend = () => {
-            currentPhotoDataURL = reader.result;
-            enableSubmitButton(true);
+    // ----------------------------------------------------
+    // CAMERA ACTIVATION LOGIC
+    // ----------------------------------------------------
+    async function startCamera() {
+        if (stream) {
+            // If camera is already running, the click takes the snapshot
+            takePhoto();
+            return;
+        }
+        
+        // Hide canvas if it was showing a previous photo
+        canvasSnapshot.style.display = 'none';
+        
+        try {
+            // Request camera access (front or back facing)
+            stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: false });
+            
+            videoFeed.srcObject = stream;
+            
+            videoFeed.onloadedmetadata = () => {
+                videoFeed.play();
 
-            cameraView.innerHTML = `
-                <img src="${currentPhotoDataURL}" 
-                     alt="Uploaded Photo" 
-                     style="width:100%; height:100%; object-fit:cover;">
-            `;
+                // Hide placeholder and show video feed
+                cameraPlaceholder.style.display = 'none';
+                videoFeed.style.display = 'block';
+                showNotification('Camera feed active. Click "Take Photo" again to snap.');
+            };
 
-            showNotification('Photo uploaded. Ready to submit.');
-        };
+        } catch (err) {
+            console.error("Error accessing the camera:", err);
+            showNotification('Error: Could not access camera. Please check permissions.');
+            // Restore placeholder if camera fails
+            cameraPlaceholder.style.display = 'flex';
+        }
+    }
 
-        reader.readAsDataURL(file);
-    } else {
+    // ----------------------------------------------------
+    // UPLOAD LOGIC (Prepare for Submission)
+    // ----------------------------------------------------
+    photoFileInput.addEventListener('change', (event) => {
+        const file = event.target.files[0]; 
+        stopCamera(); // Ensure camera is off if user uploads instead
+
+        if (file) {
+            // Convert file to data URL for display/submission consistency
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                currentPhotoDataURL = reader.result; // Store photo data URL
+                enableSubmitButton(true);
+                showNotification(`File selected: ${file.name}. Ready to submit.`);
+
+                // Display in Camera View, replacing all other media/placeholders
+                cameraView.innerHTML = `<img src="${currentPhotoDataURL}" alt="Uploaded Photo" style="width: 100%; height: 100%; object-fit: cover;">`;
+            };
+            reader.readAsDataURL(file);
+            
+        } else {
+            currentPhotoDataURL = null;
+            enableSubmitButton(false);
+            showNotification('No file selected.');
+        }
+    });
+
+    // ----------------------------------------------------
+    // SUBMIT LOGIC (Final Action)
+    // ----------------------------------------------------
+    submitPhotoBtn.addEventListener('click', () => {
+        if (!currentPhotoDataURL) {
+            showNotification("Please upload or capture a photo first.");
+            return;
+        }
+
+        // 1. Create and add the photo to the client-side gallery
+        // If file input has a file, use its name; otherwise, use a generic name
+        const photoName = photoFileInput.files[0] ? photoFileInput.files[0].name : "Photobooth Snap";
+        const newGalleryItem = createGalleryItem(currentPhotoDataURL, photoName);
+        photosGrid.prepend(newGalleryItem); 
+        
+        // 2. Reset state for the next photo
         currentPhotoDataURL = null;
         enableSubmitButton(false);
-        showNotification('Upload canceled.');
+        photoFileInput.value = ''; // Clear file input
+        stopCamera(); // Ensure camera is stopped
+
+        // Restore the initial state (placeholder) in camera view
+        cameraView.innerHTML = `
+            <div class="camera-placeholder" id="cameraPlaceholder">
+                <i class="fas fa-camera"></i>
+                <p>Click "Take Photo" to activate your camera or "Upload Photo".</p>
+            </div>`;
+        
+        showNotification(`Photo successfully submitted and added to the gallery.`);
+    });
+
+
+    // ----------------------------------------------------
+    // ATTACH EVENT LISTENERS
+    // ----------------------------------------------------
+    
+    // A. Take Photo listener (Starts camera or takes snapshot)
+    takePhotoBtn.addEventListener('click', startCamera);
+    
+    // B. Upload Photo listener (Triggers hidden file input)
+    uploadPhotoBtn.addEventListener('click', () => {
+        photoFileInput.click();
+    });
+
+    // ----------------------------------------------------
+    // HELPER FUNCTION: CREATE GALLERY ITEM
+    // ----------------------------------------------------
+    function createGalleryItem(fileURL, fileName) {
+        const photoItem = document.createElement('div');
+        photoItem.classList.add('photo-item');
+        
+        const img = document.createElement('img');
+        img.src = fileURL;
+        img.alt = fileName || 'Gallery Photo';
+        
+        const photoInfo = document.createElement('div');
+        photoInfo.classList.add('photo-info');
+        
+        const author = document.createElement('span');
+        author.classList.add('photo-author');
+        author.textContent = 'Guest'; 
+        
+        const time = document.createElement('span');
+        time.classList.add('photo-time');
+        time.textContent = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+        
+        photoInfo.appendChild(author);
+        photoInfo.appendChild(time);
+        
+        photoItem.appendChild(img);
+        photoItem.appendChild(photoInfo);
+        
+        return photoItem;
     }
-});
-
-// Submit Photo (add to gallery)
-submitPhotoBtn.addEventListener('click', () => {
-    if (!currentPhotoDataURL) {
-        showNotification('No photo to submit.');
-        return;
-    }
-
-    const fileName = photoFileInput.files[0] ? photoFileInput.files[0].name : 'Photobooth Snap';
-
-    const newGalleryItem = createGalleryItem(currentPhotoDataURL, fileName);
-    photosGrid.prepend(newGalleryItem);
-
-    currentPhotoDataURL = null;
-    enableSubmitButton(false);
-    photoFileInput.value = '';
-    stopCamera();
-
-    cameraView.innerHTML = `
-        <div class="camera-placeholder" id="cameraPlaceholder">
-            <i class="fas fa-camera"></i>
-            <p>Click "Take Photo" to activate your camera or "Upload Photo".</p>
-        </div>
-    `;
-
-    showNotification("Photo submitted and added to gallery.");
-});
-
-// Build gallery item
-function createGalleryItem(fileURL, fileName) {
-    const item = document.createElement('div');
-    item.classList.add('photo-item');
-
-    item.innerHTML = `
-        <img src="${fileURL}" alt="${fileName}">
-        <div class="photo-info">
-            <span class="photo-author">Guest</span>
-            <span class="photo-time">${new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</span>
-        </div>
-    `;
-
-    return item;
-}
     
     // Newsletter form submission
     const newsletterForm = document.querySelector('.newsletter-form');
