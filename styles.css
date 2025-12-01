@@ -870,6 +870,72 @@ section {
 }
 
 /* Photobooth Section */
+.photobooth-frame {
+        position: relative;
+        width: 100%;
+        max-width: 500px; /* Example max width */
+        margin: auto;
+    }
+    .camera-view {
+        /* Define a container size, e.g., a square */
+        width: 100%;
+        padding-top: 75%; /* 4:3 aspect ratio (75% of width) */
+        position: relative;
+        overflow: hidden;
+        border: 2px solid var(--color-primary, #007bff);
+        background-color: #eee;
+    }
+    .camera-placeholder,
+    .camera-media {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #666;
+        font-size: 1.5em;
+    }
+    .photobooth-controls {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+    .photos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .photo-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+    .photo-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .photo-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 5px;
+        font-size: 0.75em;
+        display: flex;
+        justify-content: space-between;
+    }
+    .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
 .photobooth-section {
     background: var(--secondary);
 }

@@ -39,7 +39,6 @@
                 <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#exhibitions" class="nav-link">Exhibitions</a></li>
-                <li class="nav-item"><a href="#promotions" class="nav-link">Promotions</a></li>
                 <li class="nav-item"><a href="#freedom-wall" class="nav-link">Freedom Wall</a></li>
                 <li class="nav-item"><a href="#photobooth" class="nav-link">Photobooth</a></li>
             </ul>
@@ -80,7 +79,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2 class="section-title">Our Story</h2>
-                    <p class="about-description">​The land holds memory, but does the nation? </br>​ Our indigenous Filipino culture was not simply lost; it was systematically suppressed and buried beneath centuries of conquest. Today, only faint traces remain visible on the surface. In this exhibition, Reawakening the Filipino Soul Through Art, it will be an act of cultural archaeology. It is where Filipino artists become the storytellers, using their practice to dig, deconstruct, and reclaim what was hidden. Through these works, we invite all seekers to witness not a history lesson, but a powerful, living echo. Let us remember together what our ancestors made, passed on, and fought to preserve. </p>
+                    <p class="about-description">​The land holds memory, but does the nation? </br>​Our indigenous Filipino culture was not simply lost; it was systematically suppressed and buried beneath centuries of conquest. Today, only faint traces remain visible on the surface. In this exhibition, Reawakening the Filipino Soul Through Art. It is where Filipino artists become the storytellers, using their practice to dig, deconstruct, and reclaim what was hidden. Through these works, we invite all seekers to witness not a history lesson, but a powerful, living echo. Let us remember together what our ancestors made, passed on, and fought to preserve. </p>
                     <div class="stats-grid">
                         <div class="stat-item">
                             <span class="stat-number" data-count="13">0</span>
@@ -274,16 +273,16 @@
                     <div class="exhibition-img">
                         <img src="resources/images/Roblox/Roblox.jpg" alt="Beyond Boundaries">
                         <div class="exhibition-date">
-                            <span class="date">Dec 1 - Dec 3/4</span>
+                            <span class="date">Dec 1 - 3</span>
                             <span class="year">2025</span>
                         </div>
                     </div>
                     <div class="exhibition-info">
                         <h3>Roblox</h3>
-                        <p>An exploration of art that transcends traditional mediums and cultural divides, featuring 30 international artists.</p>
+                        <p>An exploration of art that transcends traditional mediums and cultural divides.</p>
                         <div class="exhibition-stats">
                             <div class="stat">
-                                <span class="stat-number">5+</span>
+                                <span class="stat-number">10+</span>
                                 <span class="stat-label">Artists</span>
                             </div>
                             <div class="stat">
@@ -364,12 +363,12 @@
                         </div>
                         <div class="comment-info">
                             <h4>Henry James Ros</h4>
-                            <span class="comment-date">2 hours ago</span>
+                            <span class="comment-date"></span>
                         </div>
                     </div>
                     <p class="comment-text">Let's go ZT13!!</p>
                 </div>
-                
+                <!--
                 <div class="comment-card">
                     <div class="comment-header">
                         <div class="comment-avatar">
@@ -383,51 +382,70 @@
                     <p class="comment-text"> Love it</p>
                 </div>
             </div>
-        </div>
+        </div>-->
     </section>
 
-    <!-- Photobooth Section -->
-    <section id="photobooth" class="photobooth-section">
-        <div class="container">
-            <h2 class="section-title">Daily Photobooth</h2>
-            <p class="section-subtitle">Capture your gallery moments and share with our community</p>
-            
-            <div class="photobooth-container">
-                <div class="photobooth-frame">
-                    <div class="camera-view" id="cameraView">
-                        <div class="camera-placeholder">
-                            <i class="fas fa-camera"></i>
-                            <p>Click "Take Photo" to capture your moment</p>
-                        </div>
-                    </div>
-                    <div class="photobooth-controls">
-                        <button class="btn btn-primary" id="takePhotoBtn">
-                            <i class="fas fa-camera"></i>
-                            Take Photo
-                        </button>
-                        <button class="btn" id="uploadPhotoBtn">
-                            <i class="fas fa-upload"></i>
-                            Upload Photo
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="gallery-photos">
-                    <h3>Today's Gallery Photos</h3>
-                    <div class="photos-grid" id="photosGrid">
-                        <!-- Photos will be loaded here -->
-                        <div class="photo-item">
-                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gallery Photo">
-                            <div class="photo-info">
-                                <span class="photo-author">Visitor</span>
-                                <span class="photo-time">Today</span>
-                            </div>
-                        </div>
+<section id="photobooth" class="photobooth-section">
+    <div class="container">
+        <h2 class="section-title">Daily Photobooth</h2>
+        <p class="section-subtitle">Capture your gallery moments and share with our community</p>
+        
+        <div class="photobooth-container">
+            <div class="photobooth-frame">
+
+                <!-- Camera View -->
+                <div class="camera-view" id="cameraView">
+
+                    <video id="videoFeed" 
+                           class="camera-media" 
+                           autoplay 
+                           playsinline 
+                           style="display:none; width: 100%; height: 100%; object-fit: cover;">
+                    </video>
+
+                    <canvas id="canvasSnapshot" 
+                            class="camera-media" 
+                            style="display:none; width: 100%; height: 100%; object-fit: cover;">
+                    </canvas>
+                    
+                    <div class="camera-placeholder" id="cameraPlaceholder">
+                        <i class="fas fa-camera"></i>
+                        <p>Click "Take Photo" to activate your camera or "Upload Photo".</p>
                     </div>
                 </div>
+
+                <!-- Buttons -->
+                <div class="photobooth-controls">
+                    <button class="btn btn-primary" id="takePhotoBtn">
+                        <i class="fas fa-camera"></i>
+                        Take Photo
+                    </button>
+
+                    <button class="btn" id="uploadPhotoBtn">
+                        <i class="fas fa-upload"></i>
+                        Upload Photo
+                    </button>
+
+                    <button class="btn" id="submitPhotoBtn" disabled>
+                        <i class="fas fa-paper-plane"></i> 
+                        Submit Photo
+                    </button>
+                </div>
+
+                <input type="file" id="photoFileInput" accept="image/*" style="display:none;">
             </div>
+            
+            <!-- Gallery -->
+            <div class="gallery-photos">
+                <h3>Today's Gallery Photos</h3>
+                <div class="photos-grid" id="photosGrid"></div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
+
 <!--
 
     <section id="about" class="about-section">
@@ -452,9 +470,7 @@
                        --- <div class="stat-item">
                             <span class="stat-number" data-count="15">0</span>
                             <span class="stat-label">Countries</span> -->
-                        </div>
-                    </div>
-                </div>
+             
 
                 <!----
 
@@ -486,7 +502,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Hours</h3>
-                            <p>Monday - Dec 1 - Dec 3/4 </p>
+                            <p>Monday Dec 1 - Wednesday Dec 3 </p>
                         </div>
                     </div>
                     <div class="contact-item">

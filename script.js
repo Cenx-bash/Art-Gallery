@@ -16,14 +16,14 @@ const artworks = [
     },
     {
         id: 2,
-        title: "Sol at Luna: Liberasyon",
+        title: "Women Pounding Rice",
         artist: "Sofia Louise C. Zaballa",
         category: "painting",
-        image: "resources/images/visual_arts/SolAtLuna.jpg",
-        description: "inspired by Filipino ethnic tribes that wore “batuk/batok” a tattooing tradition prevalent mostly in the Kalinga tribe.",
+        image: "resources/images/visual_arts/WomenPounding.jpg",
+        description: "This painting was inspired by the casual Filipino afternoon snack, “Linubak,” made by pounding cassava on a giant mortar and pestle called “Lubakan” in Camarines Norte. You can also use this to make other filipino snacks like “Tikoy” by pounding sticky rice.",
         medium: "Oil on canvas",
         dimensions: "1080 x 1920",
-        year: "October 2021"
+        year: "May 2022"
     },
     {
         id: 3,
@@ -92,17 +92,6 @@ const artworks = [
         dimensions: "Various dimensions",
         year: "October 28 2025"
     },
-    /*{
-        id: 9,
-        title: "Singkil",
-        artist: "Kristine Camille B. Bernales",
-        category: "photography",
-        video: "",
-        description: "Minimalist landscape photography exploring the boundary between earth and sky.",
-        medium: "Archival pigment print",
-        dimensions: "80 × 50 cm",
-        year: "2023"
-    },*/
     
 ];
 
@@ -246,25 +235,56 @@ function filterArtworks(category) {
     }
 }
 
-// Open lightbox with artwork details
 function openLightbox(artwork) {
-    lightboxImg.src = artwork.image;
-    lightboxImg.alt = artwork.title;
+    const mediaContainer = document.getElementById("lightboxMedia"); 
+    mediaContainer.innerHTML = ""; // Clear previous content
+
+    let mediaElement;
+
+    // Determine media type
+    if (artwork.type === "youtube") {
+        mediaElement = document.createElement("iframe");
+        mediaElement.src = artwork.iframe;  
+        mediaElement.width = "100%";
+        mediaElement.height = "450";
+        mediaElement.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        mediaElement.allowFullscreen = true;
+
+    } else if (artwork.type === "pdf") {
+        mediaElement = document.createElement("iframe");
+        mediaElement.src = artwork.iframe; 
+        mediaElement.width = "100%";
+        mediaElement.height = "600";
+
+    } else {
+        // Default: image
+        mediaElement = document.createElement("img");
+        mediaElement.src = artwork.image;
+        mediaElement.alt = artwork.title;
+        mediaElement.classList.add("lightbox-img");
+    }
+
+    mediaContainer.appendChild(mediaElement);
+
+    // Text content
     lightboxTitle.textContent = artwork.title;
     lightboxArtist.textContent = `By ${artwork.artist}`;
     lightboxDescription.textContent = artwork.description;
     lightboxMedium.textContent = artwork.medium;
     lightboxDimensions.textContent = artwork.dimensions;
     lightboxYear.textContent = artwork.year;
-    
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
+
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
 }
 
-// Close lightbox
 function closeLightboxFunc() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "auto";
+
+    // Stop videos when closing
+    const mediaContainer = document.getElementById("lightboxMedia");
+    mediaContainer.innerHTML = "";
 }
 
 // Open artist profile modal
@@ -291,7 +311,7 @@ function openArtistModal(artistId) {
                     </div>
                     <div class="artist-profile-stat">
                         <span class="number">${artist.stats.awards}</span>
-                        <span class="label">Awards</span>
+                            <span class="label">Awards</span>
                     </div>
                     <div class="artist-profile-stat">
                         <span class="number">${artist.stats.artworks}</span>
@@ -483,27 +503,12 @@ function hideLoadingScreen() {
 // Load sample comments
 function loadSampleComments() {
     const sampleComments = [
-        {
-            name: "Art Enthusiast",
-            date: "3 hours ago",
-            text: "The Digital Realms exhibition is mind-blowing! The VR experiences transported me to another dimension."
-        },
-        {
-            name: "Creative Mind",
-            date: "1 day ago",
-            text: "Sophie Williams' sculptures made me see recycled materials in a completely new light. Truly inspiring work!"
-        },
-        {
-            name: "Gallery Visitor",
-            date: "2 days ago",
-            text: "The attention to detail in every artwork is incredible. This gallery sets the standard for contemporary art spaces."
-        }
     ];
     
     sampleComments.forEach(comment => {
         addCommentToGrid(comment);
     });
-}
+} 
 
 // Add comment to grid
 function addCommentToGrid(comment) {
@@ -529,21 +534,6 @@ function addCommentToGrid(comment) {
 // Load sample photos
 function loadSamplePhotos() {
     const samplePhotos = [
-        {
-            image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            author: "Gallery Visitor",
-            time: "Today"
-        },
-        {
-            image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            author: "Art Lover",
-            time: "Today"
-        },
-        {
-            image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            author: "Creative Soul",
-            time: "Yesterday"
-        }
     ];
     
     samplePhotos.forEach(photo => {
@@ -697,12 +687,172 @@ function setupEventListeners() {
     });
     
     // Photobooth functionality
-    takePhotoBtn.addEventListener('click', takePhoto);
-    
-    uploadPhotoBtn.addEventListener('click', () => {
-        // In a real implementation, this would open a file picker
-        showNotification('Photo upload feature would open file browser in real implementation');
-    });
+// Element references
+const takePhotoBtn = document.getElementById('takePhotoBtn');
+const uploadPhotoBtn = document.getElementById('uploadPhotoBtn');
+const submitPhotoBtn = document.getElementById('submitPhotoBtn');
+const photoFileInput = document.getElementById('photoFileInput');
+const cameraView = document.getElementById('cameraView');
+const photosGrid = document.getElementById('photosGrid');
+const videoFeed = document.getElementById('videoFeed');
+const canvasSnapshot = document.getElementById('canvasSnapshot');
+const cameraPlaceholder = document.getElementById('cameraPlaceholder');
+
+// Global state variables
+let currentPhotoDataURL = null;
+let stream = null;
+
+// Notification placeholder
+function showNotification(message) {
+    console.log(`[Notification] ${message}`);
+}
+
+// Enable/disable submit button
+function enableSubmitButton(isEnabled) {
+    submitPhotoBtn.disabled = !isEnabled;
+    if (isEnabled) submitPhotoBtn.classList.add('btn-primary');
+    else submitPhotoBtn.classList.remove('btn-primary');
+}
+
+// Stop camera stream
+function stopCamera() {
+    if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+        stream = null;
+    }
+}
+
+// Take snapshot from camera
+function takeSnapshot() {
+    const context = canvasSnapshot.getContext('2d');
+
+    canvasSnapshot.width = videoFeed.videoWidth;
+    canvasSnapshot.height = videoFeed.videoHeight;
+
+    context.drawImage(videoFeed, 0, 0, canvasSnapshot.width, canvasSnapshot.height);
+
+    currentPhotoDataURL = canvasSnapshot.toDataURL('image/png');
+    enableSubmitButton(true);
+
+    videoFeed.style.display = 'none';
+    canvasSnapshot.style.display = 'block';
+
+    stopCamera();
+    showNotification('Photo captured! Click "Submit Photo" to save.');
+}
+
+// Start camera feed
+async function startCamera() {
+    try {
+        stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: "environment" },
+            audio: false
+        });
+
+        videoFeed.srcObject = stream;
+
+        videoFeed.onloadedmetadata = () => {
+            videoFeed.play();
+
+            cameraPlaceholder.style.display = 'none';
+            canvasSnapshot.style.display = 'none';
+            videoFeed.style.display = 'block';
+
+            showNotification('Camera active. Click again to capture.');
+        };
+
+    } catch (err) {
+        console.error("Camera error:", err);
+        showNotification('Camera access denied. Please allow camera permission.');
+        cameraPlaceholder.style.display = 'flex';
+    }
+}
+
+// Handle Take Photo button logic
+takePhotoBtn.addEventListener('click', () => {
+    if (!stream) {
+        startCamera();
+    } else {
+        takeSnapshot();
+    }
+});
+
+// Handle Upload Photo
+uploadPhotoBtn.addEventListener('click', () => {
+    stopCamera();
+    photoFileInput.click();
+});
+
+photoFileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    stopCamera();
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            currentPhotoDataURL = reader.result;
+            enableSubmitButton(true);
+
+            cameraView.innerHTML = `
+                <img src="${currentPhotoDataURL}" 
+                     alt="Uploaded Photo" 
+                     style="width:100%; height:100%; object-fit:cover;">
+            `;
+
+            showNotification('Photo uploaded. Ready to submit.');
+        };
+
+        reader.readAsDataURL(file);
+    } else {
+        currentPhotoDataURL = null;
+        enableSubmitButton(false);
+        showNotification('Upload canceled.');
+    }
+});
+
+// Submit Photo (add to gallery)
+submitPhotoBtn.addEventListener('click', () => {
+    if (!currentPhotoDataURL) {
+        showNotification('No photo to submit.');
+        return;
+    }
+
+    const fileName = photoFileInput.files[0] ? photoFileInput.files[0].name : 'Photobooth Snap';
+
+    const newGalleryItem = createGalleryItem(currentPhotoDataURL, fileName);
+    photosGrid.prepend(newGalleryItem);
+
+    currentPhotoDataURL = null;
+    enableSubmitButton(false);
+    photoFileInput.value = '';
+    stopCamera();
+
+    cameraView.innerHTML = `
+        <div class="camera-placeholder" id="cameraPlaceholder">
+            <i class="fas fa-camera"></i>
+            <p>Click "Take Photo" to activate your camera or "Upload Photo".</p>
+        </div>
+    `;
+
+    showNotification("Photo submitted and added to gallery.");
+});
+
+// Build gallery item
+function createGalleryItem(fileURL, fileName) {
+    const item = document.createElement('div');
+    item.classList.add('photo-item');
+
+    item.innerHTML = `
+        <img src="${fileURL}" alt="${fileName}">
+        <div class="photo-info">
+            <span class="photo-author">Guest</span>
+            <span class="photo-time">${new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</span>
+        </div>
+    `;
+
+    return item;
+}
     
     // Newsletter form submission
     const newsletterForm = document.querySelector('.newsletter-form');
