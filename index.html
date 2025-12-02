@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Balik Tanaw | A look back to move forward</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover extraordinary contemporary artworks from emerging and established artists at ART FEST premium digital gallery.">
+    <meta name="keywords" content="art gallery, contemporary art, digital gallery, artworks, artists, exhibitions">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Balik Tanaw | A look back to move forward">
+    <meta property="og:description" content="Discover extraordinary contemporary artworks from emerging and established artists.">
+    <meta property="og:url" content="https://cenx-bash.github.io/Art-Gallery/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ART FEST | Premium Digital Gallery">
+    <meta name="twitter:description" content="Discover extraordinary contemporary artworks from emerging and established artists.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="#" class="logo">BALIK<span>TANAW</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#exhibitions" class="nav-link">Exhibitions</a></li>
+                <li class="nav-item"><a href="#freedom-wall" class="nav-link">Freedom Wall</a></li>
+                <li class="nav-item"><a href="#photobooth" class="nav-link">Photobooth</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="nav-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <canvas class="hero-canvas" id="heroCanvas"></canvas>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="display-1">A LOOK BACK <br>TO MOVE <span class="accent-text">FORWARD</span></h1>
+                <p class="hero-subtitle">Experience powerful contemporary works that explore the decolonization of Filipino culture in our immersive digital exhibit. </br></p>
+                <div class="cta-group">
+                    <a href="#gallery" class="btn btn-primary">Explore Collection</a>
+                    <a href="#promotions" class="btn">View Promotions</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+     <section id="about" class="about-section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title">Our Story</h2>
+
+                <p class="about-description">
+                    ​The land holds memory, but does the nation?<br>
+                    ​Our indigenous Filipino culture was not simply lost; it was systematically
+                    suppressed and buried beneath centuries of conquest. Today, only faint traces remain
+                    visible on the surface. In this exhibition, Reawakening the Filipino Soul Through Art.
+                    It is where Filipino artists become the storytellers, using their practice to dig,
+                    deconstruct, and reclaim what was hidden. Through these works, we invite all seekers
+                    to witness not a history lesson, but a powerful, living echo. Let us remember
+                    together what our ancestors made, passed on, and fought to preserve.
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="13">0</span>
+                        <span class="stat-label">Featured Artists</span>
+                    </div>
+
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="15">0</span>
+                        <span class="stat-label">Artworks</span>
+                    </div>
+
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Exhibitions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Promotion Section -->
+ <!----   <section id="promotions" class="promotions-section">
+        <div class="container">
+            <h2 class="section-title">Latest Promotions & Events</h2>
+            <div class="promotions-grid">
+                <div class="promotion-card">
+                    <div class="promotion-badge">New</div>
+                    <div class="promotion-content">
+                        <h3>Spring Collection Launch</h3>
+                        <p>20% off all new spring artworks. Limited time offer for early collectors.</p>
+                        <div class="promotion-meta">
+                            <span class="promotion-date"><i class="fas fa-calendar"></i> Mar 15 - Apr 30</span>
+                            <span class="promotion-code">Code: SPRING20</span>
+                        </div>
+                        <a href="#" class="promotion-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="promotion-card">
+                    <div class="promotion-badge">Hot</div>
+                    <div class="promotion-content">
+                        <h3>Artist Meet & Greet</h3>
+                        <p>Exclusive event with featured artists. Live demonstrations and Q&A sessions.</p>
+                        <div class="promotion-meta">
+                            <span class="promotion-date"><i class="fas fa-calendar"></i> Every Saturday</span>
+                            <span class="promotion-code">Free Entry</span>
+                        </div>
+                        <a href="#" class="promotion-link">RSVP Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="promotion-card">
+                    <div class="promotion-badge">Social</div>
+                    <div class="promotion-content">
+                        <h3>Share & Win Contest</h3>
+                        <p>Share your favorite artwork on social media for a chance to win a limited edition print.</p>
+                        <div class="promotion-meta">
+                            <span class="promotion-date"><i class="fas fa-calendar"></i> Ongoing</span>
+                            <span class="promotion-code">#ArtFest2024</span>
+                        </div>
+                        <a href="#" class="promotion-link">Join Contest <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="gallery-header">
+                <h2 class="section-title">Featured Artworks</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="painting">Visual Art</button>
+                    <button class="filter-btn" data-filter="sculpture">Applied Art</button>
+                    <button class="filter-btn" data-filter="digital">Literary Art</button>
+                    <button class="filter-btn" data-filter="photography">Performance Art</button>
+                </div>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Artworks will be dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Artists Section -->
+     <!--
+    <section id="artists" class="artists-section">
+        <div class="container">
+            <h2 class="section-title">Featured Artists</h2>
+            <div class="artists-grid">
+                <div class="artist-card">
+                    <div class="artist-img">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=688&q=80" alt="Elena Rodriguez">
+                        <div class="artist-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h3>Elena Rodriguez</h3>
+                        <p class="artist-location">Barcelona, Spain</p>
+                        <p class="artist-bio">Contemporary painter exploring themes of identity through vibrant color palettes and abstract forms.</p>
+                        <a href="#" class="artist-link view-profile" data-artist="elena">View Profile <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <div class="artist-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Marcus Chen">
+                        <div class="artist-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h3>Marcus Chen</h3>
+                        <p class="artist-location">Tokyo, Japan</p>
+                        <p class="artist-bio">Mixed media artist combining traditional techniques with digital elements and interactive installations.</p>
+                        <a href="#" class="artist-link view-profile" data-artist="marcus">View Profile <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <div class="artist-img">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Sophie Williams">
+                        <div class="artist-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h3>Sophie Williams</h3>
+                        <p class="artist-location">London, UK</p>
+                        <p class="artist-bio">Sculptor working with reclaimed materials to create environmental statements and public installations.</p>
+                        <a href="#" class="artist-link view-profile" data-artist="sophie">View Profile <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    -->
+
+    <!-- Artist Spotlight Section -->
+     <!--
+    <section id="spotlight" class="spotlight-section">
+        <div class="container">
+            <h2 class="section-title">Artist Spotlight</h2>
+            <div class="spotlight-content">
+                <div class="spotlight-artist">
+                    <div class="spotlight-image">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Featured Artist">
+                    </div>
+                    <div class="spotlight-info">
+                        <h3>Artist of the Month: Elena Rodriguez</h3>
+                        <p class="spotlight-description">This month we're proud to feature Elena Rodriguez, whose vibrant abstract paintings have been captivating audiences worldwide. Her unique approach to color theory and emotional expression has made her one of the most sought-after contemporary artists.</p>
+                        <div class="spotlight-stats">
+                            <div class="stat">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">Exhibitions</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Awards</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Artworks</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary">View Full Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    -->
+
+    <!-- Exhibitions Section -->
+    <section id="exhibitions" class="exhibitions-section">
+        <div class="container">
+            <h2 class="section-title">Current Exhibitions</h2>
+            <div class="exhibitions-grid">
+                <div class="exhibition-card">
+                    <div class="exhibition-img">
+                        <img src="resources/images/Roblox/Roblox.jpg" alt="Beyond Boundaries">
+                        <div class="exhibition-date">
+                            <span class="date">Dec 1 - 3</span>
+                            <span class="year">2025</span>
+                        </div>
+                    </div>
+                    <div class="exhibition-info">
+                        <h3>Roblox</h3>
+                        <p>An exploration of art that transcends traditional mediums and cultural divides.</p>
+                        <div class="exhibition-stats">
+                            <div class="stat">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Artists</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">20</span>
+                                <span class="stat-label">Artworks</span>
+                            </div>
+                        </div>
+                    <!---insert roblox link here--->
+                        <a href="#" class="exhibition-link">Explore Experience <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            <!----
+                <div class="exhibition-card">
+                    <div class="exhibition-img">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80" alt="Digital Realms">
+                        <div class="exhibition-date">
+                            <span class="date">10 SEP - 15 DEC</span>
+                            <span class="year">2024</span>
+                        </div>
+                    </div>
+                    <div class="exhibition-info">
+                        <h3>Digital Realms</h3>
+                        <p>Exploring the intersection of technology and artistic expression through immersive digital installations and VR experiences.</p>
+                        <div class="exhibition-stats">
+                            <div class="stat">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">Artists</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">45</span>
+                                <span class="stat-label">Artworks</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">2</span>
+                                <span class="stat-label">Floors</span>
+                            </div>
+                        </div>
+                        <a href="#" class="exhibition-link">Book Tickets <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+    <!-- Freedom Wall Section -->
+    <section id="freedom-wall" class="freedom-wall-section">
+        <div class="container">
+            <h2 class="section-title">Freedom Wall</h2>
+            <p class="section-subtitle">Share your thoughts, appreciation, and experiences with our community</p>
+            
+            <div class="comment-form">
+                <h3>Leave a Comment</h3>
+                <form id="commentForm">
+                    <div class="form-group">
+                        <input type="text" id="commentName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="commentMessage" placeholder="Share your thoughts..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Post Comment</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="comments-grid" id="commentsGrid">
+                <!-- Comments will be loaded here -->
+                <div class="comment-card">
+                    <div class="comment-header">
+                        <div class="comment-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="comment-info">
+                            <h4>Henry</h4>
+                            <span class="comment-date">Dec 1, 2025</span>
+                        </div>
+                    </div>
+                    <p class="comment-text">ZT13!</p>
+                </div>
+                
+                <div class="comment-card">
+                    <div class="comment-header">
+                        <div class="comment-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="comment-info">
+                            <h4>Camille Kristine</h4>
+                            <span class="comment-date">Dec 1, 2025</span>
+                        </div>
+                    </div>
+                    <p class="comment-text">:></p>
+                </div>
+
+                <div class="comment-card">
+                    <div class="comment-header">
+                        <div class="comment-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="comment-info">
+                            <h4>Kat</h4>
+                            <span class="comment-date">Dec 1, 2025</span>
+                        </div>
+                    </div>
+                    <p class="comment-text">wow</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="photobooth" class="photobooth-section">
+    <div class="container">
+        <h2 class="section-title">Daily Photobooth</h2>
+        <p class="section-subtitle">Capture your gallery moments and share with our community</p>
+        
+        <div class="photobooth-container">
+            <div class="photobooth-frame">
+
+                <!-- Camera View -->
+                <div class="camera-view" id="cameraView">
+
+                    <video id="videoFeed" 
+                           class="camera-media" 
+                           autoplay 
+                           playsinline 
+                           style="display:none; width: 100%; height: 100%; object-fit: cover;">
+                    </video>
+
+                    <canvas id="canvasSnapshot" 
+                            class="camera-media" 
+                            style="display:none; width: 100%; height: 100%; object-fit: cover;">
+                    </canvas>
+                    
+                    <div class="camera-placeholder" id="cameraPlaceholder">
+                        <i class="fas fa-camera"></i>
+                        <p>Click "Take Photo" to activate your camera or "Upload Photo".</p>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="photobooth-controls">
+                    <button class="btn btn-primary" id="takePhotoBtn">
+                        <i class="fas fa-camera"></i>
+                        Take Photo
+                    </button>
+
+                    <button class="btn" id="uploadPhotoBtn">
+                        <i class="fas fa-upload"></i>
+                        Upload Photo
+                    </button>
+
+                    <button class="btn" id="submitPhotoBtn" disabled>
+                        <i class="fas fa-paper-plane"></i> 
+                        Submit Photo
+                    </button>
+                </div>
+
+                <input type="file" id="photoFileInput" accept="image/*" style="display:none;">
+            </div>
+            
+            <!-- Gallery -->
+            <div class="gallery-photos">
+                <h3>Today's Gallery Photos</h3>
+                <div class="photos-grid" id="photosGrid"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!--
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Our Story</h2>
+                    <p class="about-description">​The land holds memory, but does the nation? </br>​ Our indigenous Filipino culture was not simply lost; it was systematically suppressed and buried beneath centuries of conquest. Today, only faint traces remain visible on the surface. In this exhibition, Reawakening the Filipino Soul Through Art, it will be an act of cultural archaeology. It is where Filipino artists become the storytellers, using their practice to dig, deconstruct, and reclaim what was hidden. Through these works, we invite all seekers to witness not a history lesson, but a powerful, living echo. Let us remember together what our ancestors made, passed on, and fought to preserve. </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="13">0</span>
+                            <span class="stat-label">Featured Artists</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">0</span>
+                            <span class="stat-label">Artworks</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Exhibitions</span>
+                        </div>
+                       --- <div class="stat-item">
+                            <span class="stat-number" data-count="15">0</span>
+                            <span class="stat-label">Countries</span> -->
+             
+
+                <!----
+
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1567595754668-9b8bce153a1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80" alt="Gallery Space">
+                </div>
+                
+            </div>
+        </div>
+    </section> -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Visit us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Ateneo De Naga University<br>SOCS101</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Hours</h3>
+                            <p>Monday Dec 1 - Wednesday Dec 3 </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Contact</h3>
+                            <p>baliktanaw@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Balik Tanaw</h3>
+                    <p>Experience powerful contemporary works that explore the decolonization of Filipino culture in our immersive digital exhibit.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#artists">Artists</a></li>
+                        <li><a href="#exhibitions">Exhibitions</a></li>
+                        <li><a href="#promotions">Promotions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Art Consultation</a></li>
+                        <li><a href="#">Private Viewings</a></li>
+                        <li><a href="#">Art Rental</a></li>
+                        <li><a href="#">Commission Works</a></li>
+                        <li><a href="#">Shipping</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive updates on new collections and exhibitions.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Balik Tanaw. All rights reserved Henry | Karl.</p>
+                <div class="footer-links"> 
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox">&times;</span>
+            <div class="lightbox-body">
+                <div class="lightbox-image">
+                    <img src="" alt="" id="lightbox-img">
+                </div>
+                <div class="lightbox-info">
+                    <h3 id="lightbox-title"></h3>
+                    <p id="lightbox-artist"></p>
+                    <p id="lightbox-description"></p>
+                    <div class="lightbox-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Medium</span>
+                            <span id="lightbox-medium"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Dimensions</span>
+                            <span id="lightbox-dimensions"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Year</span>
+                            <span id="lightbox-year"></span>
+                        </div>
+                    </div>
+                    <div class="lightbox-actions">
+                        <button class="btn btn-primary">Inquire</button>
+                        <button class="btn">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Artist Profile Modal -->
+    <div id="artistModal" class="artist-modal">
+        <div class="artist-modal-content">
+            <span class="close-artist-modal">&times;</span>
+            <div class="artist-modal-body" id="artistModalBody">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">Balik <span> Tanaw<span></div>
+            <div class="loading-text">A look back to move forward</div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="loading-percentage">0%</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
