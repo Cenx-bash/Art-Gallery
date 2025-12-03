@@ -16,6 +16,17 @@ const artworks = [
     },
     {
         id: 2,
+        title: "Luzviminda",
+        artist: "Harlem Lei Novelo",
+        category: "painting",
+        image: "resources/images/visual_arts/Luzvimida.jpg",
+        description: "The art is a reminder of our origins, our land, cultural identity, and our products. Diversity already flows in our skin",
+        medium: "Digital Art",
+        dimensions: "1080 x 1920",
+        year: "June 1 2023"
+    },
+    {
+        id: 3,
         title: "Women Pounding Rice",
         artist: "Sofia Louise C. Zaballa",
         category: "painting",
@@ -26,7 +37,7 @@ const artworks = [
         year: "May 2022"
     },
     {
-        id: 3,
+        id: 4,
         title: "Threads of Ancestry",
         artist: "Ashley Marie Casili",
         category: "painting",
@@ -37,7 +48,7 @@ const artworks = [
         year: "2025"
     },
     {
-        id: 4,
+        id: 5,
         title: "Batok, Stories, Identity",
         artist: "Mariella Angela M. Baleciado",
         category: "painting",
@@ -48,7 +59,7 @@ const artworks = [
         year: "November 10 2025"
     },
     {
-        id: 5,
+        id: 6,
         title: "Ina",
         artist: "Kent Steven Abillon",
         category: "painting",
@@ -59,18 +70,29 @@ const artworks = [
         year: "July 11 2025"
     },
     {
-        id: 6,
+        id: 7,
         title: "Tribal Rhythm",
         artist: "Angeline Dela Cruz Marcaida",
         category: "sculpture",
-        image: "resources/images/applied_arts/Tribal_Cons.jpg",
+        image: "resources/images/applied_arts/tribalcons.jpg",
         description: "formations. Its bold structure highlights traditional ornamentation often found in indigenous cultures. The piece visually strikes a sense of strength and rooted identity.",
         medium: "metal beads, iron coiled wire strands.",
         dimensions: "20' length",
         year: "2022"
     },
     {
-        id: 7,
+        id: 8,
+        title: "Malaya",
+        artist: "Angeline Dela Cruz Marcaida",
+        category: "sculpture",
+        image: "resources/images/applied_arts/Malaya.jpg",
+        description: "Symbolizes the Filipino journey of decolonization, breaking away from colonial frameworks, rediscovering indigenous identity, and embracing cultural freedom.",
+        medium: "metal alloy, beads, multi strand coil.",
+        dimensions: "20' length",
+        year: "2022"
+    },
+    {
+        id: 9,
         title: "The Blood of Our Kin",
         artist: "Karl Christian M. Garcia",
         category: "digital",
@@ -82,7 +104,7 @@ const artworks = [
     },
     ,
     {
-        id: 8,
+        id: 10,
         title: "Lupang Sinilangan",
         artist: "Eman Rey Gases",
         category: "digital",
@@ -92,60 +114,56 @@ const artworks = [
         dimensions: "Various dimensions",
         year: "October 28 2025"
     },
+    ,
+    {
+        id: 11,
+        title: "Sa Dugo ng Aking Lahi",
+        artist: "Paul Benedict Punzalan",
+        category: "digital",
+        image: "resources/images/literary_arts/DugoLahi.jpg",
+        description: "The description for my literature artwork focuses on decolonization and rediscovering Filipino identity as it explores that identity is carried within our blood even though it was reshaped by history and slowly returning to our roots of being a Filipino.",
+        medium: "Poem",
+        dimensions: "Various dimensions",
+        year: "N/D"
+    },
     
 ];
 
 // Artists data
 const artists = {
-    elena: {
-        name: "Elena Rodriguez",
-        location: "Barcelona, Spain",
-        bio: "Elena Rodriguez is a contemporary painter known for her vibrant exploration of identity through abstract forms and bold color palettes. With over 15 years of experience, her work has been exhibited in galleries across Europe and North America. Elena's unique approach combines traditional painting techniques with modern emotional expression, creating pieces that resonate deeply with viewers.",
-        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    harlem: {
+        name: "Harlem Novelo",
+        location: "Naga City",
+        bio: "Artist of 'Luzviminda'",
+        image: "Resources/images/Artist/Harlem.png",
         stats: {
-            exhibitions: 15,
-            awards: 3,
-            artworks: 50,
-            collections: 25
+            artworks: 1,
+            awards: 0,
+            exhibitions: 0,
         },
         social: {
-            instagram: "@elenarodriguezart",
-            twitter: "@elena_art",
-            behance: "elenarodriguez"
         }
     },
-    marcus: {
-        name: "Marcus Chen",
-        location: "Tokyo, Japan",
-        bio: "Marcus Chen is a pioneering mixed media artist who seamlessly blends traditional techniques with cutting-edge digital elements. His interactive installations have captivated audiences worldwide, pushing the boundaries of what constitutes contemporary art. Marcus's work often explores the intersection of technology, nature, and human consciousness.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    angeline: {
+        name: "Angeline Dela Cruz Marcaida",
+        location: "Naga City",
+        bio: "Artist of 'Tribal Rhythm'",
+        image: "Resources/images/Artist/Angeline.png",
         stats: {
-            exhibitions: 12,
-            awards: 5,
-            artworks: 35,
-            collections: 18
+            artworks: 1,
         },
         social: {
-            instagram: "@marcuschen.digital",
-            twitter: "@marcuschen",
-            behance: "marcuschen"
         }
     },
-    sophie: {
-        name: "Sophie Williams",
-        location: "London, UK",
-        bio: "Sophie Williams is an environmental sculptor renowned for her work with reclaimed materials. Her large-scale installations address pressing ecological issues while maintaining aesthetic beauty. Sophie's commitment to sustainability extends beyond her art, as she actively participates in environmental conservation projects and educates communities about sustainable art practices.",
-        image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    gases: {
+        name: "Emman Ray A. Gases",
+        location: "Naga city",
+        bio: "Artist of 'Lupang sinilangan'",
+        image: "Resources/images/Artist/Gases.jpg",
         stats: {
-            exhibitions: 18,
-            awards: 4,
-            artworks: 40,
-            collections: 22
+            artworks: 1,
         },
         social: {
-            instagram: "@sophiewilliams.sculpture",
-            twitter: "@sophie_sculpts",
-            behance: "sophiewilliams"
         }
     }
 };
